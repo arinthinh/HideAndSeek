@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -6,16 +7,15 @@ public class GameData
 {
     public GameData()
     {
-        UserInfo = new();
+        currentLevel = 1;
+        fruits = 0;
+        skinOwned = new() { 0 };
     }
-    
-    public UserInfoData UserInfo;
+
+    public int currentLevel;
+    public int fruits;
+    public List<int> skinOwned;
 }
 
-[Serializable]
-public class UserInfoData
-{
-    public string PlayerID;
-}
 
 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,32 +9,45 @@ namespace Toolkit.UI
     /// </summary>
     [RequireComponent(typeof(Canvas))]
     [RequireComponent(typeof(GraphicRaycaster))]
+    [RequireComponent(typeof(CanvasGroup))]
     public abstract class UIView : MonoBehaviour
     {
         public virtual string Key => GetType().FullName;
 
+        protected bool _isShowing;
         protected Canvas _canvas;
-        protected CanvasScaler _canvasScaler;
-        
+        protected CanvasGroup _canvasGroup;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             _canvas = GetComponent<Canvas>();
-            _canvasScaler = GetComponent<CanvasScaler>();
+            _canvasGroup = GetComponent<CanvasGroup>();
             _canvas.enabled = false;
         }
 
-        public void Show()
+        public virtual void Init()
         {
+            _canvas.enabled = false;
+            _isShowing = false;
+        }
+
+        public virtual void Show()
+        {
+            if (_isShowing) return;
+            _isShowing = true;
             _canvas.enabled = true;
+            _canvasGroup.interactable = true;
         }
 
-        public void Hide()
+        public virtual void Hide()
         {
+            if(!_isShowing) return;
+            _isShowing = false;
             _canvas.enabled = false;
+            _canvasGroup.interactable = false;
         }
 
-        public void SetSortOrder(int order)
+        public virtual void SetSortOrder(int order)
         {
             _canvas.sortingOrder = order;
         }
