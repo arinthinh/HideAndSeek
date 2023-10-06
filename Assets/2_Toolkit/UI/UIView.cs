@@ -13,29 +13,27 @@ namespace Toolkit.UI
         public virtual string Key => GetType().FullName;
 
         protected Canvas _canvas;
+        protected CanvasScaler _canvasScaler;
+        
 
-        protected virtual void Awake()
+        protected void Awake()
         {
             _canvas = GetComponent<Canvas>();
+            _canvasScaler = GetComponent<CanvasScaler>();
             _canvas.enabled = false;
         }
 
-        public virtual void Init()
-        {
-            _canvas.enabled = false;
-        }
-
-        public virtual void Show()
+        public void Show()
         {
             _canvas.enabled = true;
         }
 
-        public virtual void Hide()
+        public void Hide()
         {
             _canvas.enabled = false;
         }
 
-        public virtual void SetSortOrder(int order)
+        public void SetSortOrder(int order)
         {
             _canvas.sortingOrder = order;
         }

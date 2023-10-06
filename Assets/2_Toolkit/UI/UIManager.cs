@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
 using Toolkit.UI;
 using UnityEngine;
 
-public class UIManager : SingletonMono<UIManager>
+public class UIManager : MonoBehaviour
 {
-    [SerializeField] private List<UIView> _views;
-    private readonly Dictionary<string, UIView> _viewsDic = new();
+    [SerializeField] private UIView[] _viewsArr;
+    private Dictionary<string, UIView> _viewsDic = new();
 
     public void Start()
     {
@@ -15,23 +14,22 @@ public class UIManager : SingletonMono<UIManager>
 
     public void Initialize()
     {
-        foreach (var view in _views)
+        foreach (var view in _viewsArr)
         {
             _viewsDic.Add(view.Key, view);
-            view.Init();
         }
     }
 
-    public T GetView<T>() where T : UIView
+    public UIView GetView<T>()
     {
         var key = typeof(T).FullName;
-        return _viewsDic.ContainsKey(key) ? _viewsDic[key] as T : null;
+        return _viewsDic.ContainsKey(key) ? _viewsDic[key] : null;
     }
 
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        _views = gameObject.GetComponentsInChildren<UIView>().ToList();
+        _viewsArr = gameObject.GetComponentsInChildren<UIView>();
     }
 #endif
 }

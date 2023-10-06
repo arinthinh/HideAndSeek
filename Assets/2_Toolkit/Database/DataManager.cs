@@ -19,10 +19,11 @@ public class DataManager : SingletonMono<DataManager>
 
     public void Start()
     {
-        LoadData();
+        Load();
+        Save();
     }
 
-    public void LoadData()
+    public void Load()
     {
         if (PlayerPrefs.HasKey(_dataKey))
         {
@@ -32,14 +33,8 @@ public class DataManager : SingletonMono<DataManager>
         }
         else
         {
-            CreateNewData();
+            _gameData = new();
         }
-    }
-
-    public void CreateNewData()
-    {
-        _gameData = new();
-        Save();
     }
 
     public void Save()
