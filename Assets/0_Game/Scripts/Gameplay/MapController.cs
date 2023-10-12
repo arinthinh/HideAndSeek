@@ -5,21 +5,13 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
-    [SerializeField] private Transform _ground1;
-    [SerializeField] private Transform _ground2;
-    [SerializeField] private Transform _obstaclesContainer;
+    [SerializeField] private float _speed;
+    [SerializeField] private MapObjectsManager _mapObjectsManager;
+    [SerializeField] private MapGroundController _mapGround;
 
-    private bool _isRun;
-    
     private void Update()
     {
-        if (!_isRun) return;
-        
-        
-    }
-
-    public void Stop()
-    {
-        
+        var moveAmount = _speed * Time.deltaTime;
+        _mapGround.Scroll(moveAmount);
     }
 }

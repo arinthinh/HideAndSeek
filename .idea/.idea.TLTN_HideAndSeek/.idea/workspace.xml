@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea55730f-0bd1-4f28-9dc7-25ce8f489523" name="Changes" comment="" />
+    <list default="true" id="ea55730f-0bd1-4f28-9dc7-25ce8f489523" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TLTN_HideAndSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TLTN_HideAndSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Preferences/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Preferences/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/GameplayController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Config/CharacterSkinConfigSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Config/MapConfigSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapGroundController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/UI/ScrollBackground.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/UI/UIViewShop.cs" root0="FORCE_HIGHLIGHTING" />
@@ -42,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GAME&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -106,6 +115,8 @@
       <updated>1691985843818</updated>
       <workItem from="1696562696811" duration="5034000" />
       <workItem from="1696568078843" duration="608000" />
+      <workItem from="1697008505724" duration="780000" />
+      <workItem from="1697076139544" duration="3003000" />
     </task>
     <servers />
   </component>

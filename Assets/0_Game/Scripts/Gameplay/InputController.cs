@@ -4,32 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InputController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class InputController : MonoBehaviour
 {
-    public static event Action onTouchDown;
-    public static event Action onTouchUp;
-    
-    private bool _enable = true;
+    public static event Action OnTouchBegin; // Event for touch beginning
+    public static event Action OnTouchEnd; // Event for touch ending
 
-    public void OnPointerDown(PointerEventData eventData)
+    private bool _isEnable;
+
+    public void SetEnable(bool isEnable)
     {
-        if(!_enable) return;
-        onTouchDown?.Invoke();
+        _isEnable = isEnable;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    private void Update()
     {
-        if(!_enable) return;
-        onTouchUp?.Invoke();
-    }
+        if (!_isEnable) return;
+        // Check if there is any touch input
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
-    public void EnableInput()
-    {
-        _enable = true;
-    }
+            // Check the phase of the touch
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    // Invoke the OnTouchBegin event
+                    OnTouchBegin?.Invoke();
+                    break;
 
-    public void DisableInput()
-    {
-        _enable = false;
+                case TouchPhase.Ended:
+                    // Invoke the OnTouchEnd event
+                    OnTouchEnd?.Invoke();
+                    break;
+            }
+        }
     }
 }

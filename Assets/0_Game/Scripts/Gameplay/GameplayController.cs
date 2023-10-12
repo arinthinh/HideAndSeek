@@ -9,9 +9,13 @@ public class GameplayController : SingletonMono<GameplayController>
     [SerializeField] private PlayerController _player;
     [SerializeField] private BossController _boss;
     [SerializeField] private MapController _map;
+    [SerializeField] private InputController _input;
 
     private void OnEnable()
     {
+        InputController.OnTouchBegin += OnTouch;
+        InputController.OnTouchEnd += OnRelease;
+        
         BossController.onScanHitPlayer += HandleLoseGame;
     }
 
@@ -33,6 +37,7 @@ public class GameplayController : SingletonMono<GameplayController>
 
     public void StartRun()
     {
+        _input.SetEnable(true);
         UIManager.Instance.GetView<UIViewGameplay>().Show();
     }
     
@@ -45,7 +50,7 @@ public class GameplayController : SingletonMono<GameplayController>
 
     public void HandleLoseGame()
     {
-        _map.Stop();
+        //_map.Stop();
         UIManager.Instance.GetView<UIViewLose>().Show();
     }
 
@@ -64,5 +69,16 @@ public class GameplayController : SingletonMono<GameplayController>
                 HandleWinGame();
                 break;
         }
+    }
+
+    private void OnTouch()
+    {
+        Debug.Log("Touch");
+    }
+
+    private void OnRelease()
+    {
+        Debug.Log("Release");
+
     }
 }
