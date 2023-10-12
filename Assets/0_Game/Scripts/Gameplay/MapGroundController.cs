@@ -6,7 +6,6 @@ using UnityEngine;
 public class MapGroundController : MonoBehaviour
 {
     [Tooltip("Background 2 position.x")]
-    [SerializeField] private float _speedMultiple = 1;
     [SerializeField] private float _offset;
     [SerializeField] private Transform _ground1;
     [SerializeField] private Transform _ground2;
@@ -27,7 +26,7 @@ public class MapGroundController : MonoBehaviour
             _ground2.SetPositionX(_offset);
         }
         
-        _ground1.Translate(Vector3.left * moveAmount * _speedMultiple);
-        _ground2.Translate(Vector3.left * moveAmount * _speedMultiple);
+        _ground1.Translate(Vector3.left * moveAmount);
+        _ground2.Translate(Vector3.left * moveAmount);
     }
 }

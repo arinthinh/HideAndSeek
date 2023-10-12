@@ -8,6 +8,7 @@ public enum GameplayObjectType
     Obstacles,
     Fruit,
     Slow,
+    TriggerBoss,
     End
 }
 

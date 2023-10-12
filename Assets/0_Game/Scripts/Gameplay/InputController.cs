@@ -10,12 +10,29 @@ public class InputController : MonoBehaviour
     public static event Action OnTouchEnd; // Event for touch ending
 
     private bool _isEnable;
+    
 
     public void SetEnable(bool isEnable)
     {
         _isEnable = isEnable;
     }
 
+    #if UNITY_EDITOR
+    private void Update()
+    {
+        if (!_isEnable) return;
+        
+        if(Input.GetMouseButtonDown(0))
+        {
+            OnTouchBegin?.Invoke();
+        }
+        
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnTouchEnd?.Invoke();
+        }
+    }
+    #else
     private void Update()
     {
         if (!_isEnable) return;
@@ -39,4 +56,7 @@ public class InputController : MonoBehaviour
             }
         }
     }
+    #endif
+    
+    
 }

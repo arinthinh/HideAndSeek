@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MapObjectsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _objectsContainer;
+    
+    public void Run(float moveAmount)
     {
-        
+        _objectsContainer.Translate(Vector3.left * moveAmount);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

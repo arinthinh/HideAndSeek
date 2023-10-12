@@ -9,9 +9,30 @@ public class MapController : MonoBehaviour
     [SerializeField] private MapObjectsManager _mapObjectsManager;
     [SerializeField] private MapGroundController _mapGround;
 
+    private bool _isMove;
+    private float _speedMultiple = 1;
+    
+    public void Move()
+    {
+        _isMove = true;
+    }
+
+    public void Stop()
+    {
+        _isMove = false;
+    }
+
+    public void Slowdown(float multiple)
+    {
+        _speedMultiple *= multiple;
+    }
+    
     private void Update()
     {
-        var moveAmount = _speed * Time.deltaTime;
+        if(!_isMove) return;
+        
+        var moveAmount = _speed * Time.deltaTime * _speedMultiple;
         _mapGround.Scroll(moveAmount);
+        _mapObjectsManager.Run(moveAmount);
     }
 }

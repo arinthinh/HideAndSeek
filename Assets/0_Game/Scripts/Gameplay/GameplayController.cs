@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class GameplayController : SingletonMono<GameplayController>
@@ -13,6 +14,8 @@ public class GameplayController : SingletonMono<GameplayController>
 
     private void OnEnable()
     {
+        GameplayObject.onTrigger += OnObjectTrigger;
+        
         InputController.OnTouchBegin += OnTouch;
         InputController.OnTouchEnd += OnRelease;
         
@@ -21,6 +24,11 @@ public class GameplayController : SingletonMono<GameplayController>
 
     private void OnDisable()
     {
+        GameplayObject.onTrigger -= OnObjectTrigger;
+        
+        InputController.OnTouchBegin -= OnTouch;
+        InputController.OnTouchEnd -= OnRelease;
+        
         BossController.onScanHitPlayer -= HandleLoseGame;
     }
 
@@ -37,8 +45,11 @@ public class GameplayController : SingletonMono<GameplayController>
 
     public void StartRun()
     {
-        _input.SetEnable(true);
         UIManager.Instance.GetView<UIViewGameplay>().Show();
+        _input.SetEnable(true);
+        _map.Move();
+        _player.Run();
+        Camera.main.transform.DOMoveY(1, 1f);
     }
     
     public void HandleWinGame()
@@ -46,6 +57,9 @@ public class GameplayController : SingletonMono<GameplayController>
         var gameData = DataManager.Instance.GameData;
         gameData.fruits += 10;
         gameData.currentLevel++;
+        
+        _map.Stop();
+        _player.Stop();
     }
 
     public void HandleLoseGame()
@@ -73,12 +87,13 @@ public class GameplayController : SingletonMono<GameplayController>
 
     private void OnTouch()
     {
-        Debug.Log("Touch");
+        _player.Stop();
+        _map.Stop();
     }
 
     private void OnRelease()
     {
-        Debug.Log("Release");
-
+        _player.Run();
+        _map.Move();
     }
 }

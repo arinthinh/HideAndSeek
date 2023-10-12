@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Obstacle
+  - Player
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Groud
     uniqueID: 1505377229
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1849215731
     locked: 0
