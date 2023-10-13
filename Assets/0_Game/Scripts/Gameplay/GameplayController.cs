@@ -49,7 +49,9 @@ public class GameplayController : SingletonMono<GameplayController>
         _input.SetEnable(true);
         _map.Move();
         _player.Run();
-        Camera.main.transform.DOMoveY(1, 1f);
+
+        Camera.main.DOOrthoSize(5, 1f);
+        Camera.main.transform.DOMove(new Vector3(1, 1.5f, -10), 1f);
     }
     
     public void HandleWinGame()

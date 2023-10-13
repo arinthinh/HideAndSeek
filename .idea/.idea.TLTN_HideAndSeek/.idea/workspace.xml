@@ -7,11 +7,8 @@
     <list default="true" id="ea55730f-0bd1-4f28-9dc7-25ce8f489523" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TLTN_HideAndSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TLTN_HideAndSeek/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Game/Preferences/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Preferences/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/BossController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/BossController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/GameplayController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/InputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Config/CharacterSkinConfigSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Config/MapConfigSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/BossAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/MapGroundController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/Gameplay/Objects/Fruit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/UI/ScrollBackground.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Game/Scripts/UI/UIViewShop.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
