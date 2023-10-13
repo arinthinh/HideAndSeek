@@ -5,12 +5,13 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-public class GameplayController : SingletonMono<GameplayController>
+public sealed class GameplayController : SingletonMono<GameplayController>
 {
     [SerializeField] private PlayerController _player;
     [SerializeField] private BossController _boss;
     [SerializeField] private MapController _map;
     [SerializeField] private InputController _input;
+    [SerializeField] private CameraController _cameraController;
 
     private void OnEnable()
     {
@@ -41,6 +42,7 @@ public class GameplayController : SingletonMono<GameplayController>
     {
         await UniTask.Yield();
         UIManager.Instance.GetView<UIViewMain>().Show();
+        _cameraController.Init();;
     }
 
     public void StartRun()
@@ -49,9 +51,8 @@ public class GameplayController : SingletonMono<GameplayController>
         _input.SetEnable(true);
         _map.Move();
         _player.Run();
+        _cameraController.ZoomOut();
 
-        Camera.main.DOOrthoSize(5, 1f);
-        Camera.main.transform.DOMove(new Vector3(1, 1.5f, -10), 1f);
     }
     
     public void HandleWinGame()

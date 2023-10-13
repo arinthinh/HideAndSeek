@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InputController : MonoBehaviour
+public sealed class InputController : MonoBehaviour
 {
     public static event Action OnTouchBegin; // Event for touch beginning
     public static event Action OnTouchEnd; // Event for touch ending
