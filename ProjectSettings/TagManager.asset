@@ -41,9 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 4251285711
-    locked: 0
   - name: Lazer
     uniqueID: 1216498577
     locked: 0
@@ -52,4 +49,10 @@ TagManager:
     locked: 0
   - name: Obstacles
     uniqueID: 1849215731
+    locked: 0
+  - name: Player
+    uniqueID: 4251285711
+    locked: 0
+  - name: 
+    uniqueID: 1454269169
     locked: 0
