@@ -18,9 +18,6 @@ public class BossController : MonoBehaviour
     [SerializeField] private float _scanDelay;
     [Space(20)]
     [SerializeField] private FOV _fovLeft;
-    [SerializeField] private FOV _fovRight;
-    [SerializeField] private GameObject _eyeLightLeft;
-    [SerializeField] private GameObject _eyeLightRight;
 
     // Private fields
     private bool _isScanning;
@@ -37,11 +34,10 @@ public class BossController : MonoBehaviour
     public void Attack()
     {
         // Animation
-        _bossAnimator.Attack();
+        _bossAnimator.Appear();
 
         // FOV
         _fovLeft.viewRadius = 0;
-        _fovRight.viewRadius = 0;
         _scanRadius = 0;
         _isScanning = true;
 
@@ -49,16 +45,11 @@ public class BossController : MonoBehaviour
             .Float(0, _scanMaxRadius, _scanTime, value =>
             {
                 _fovLeft.viewRadius = value;
-                _fovRight.viewRadius = value;
                 CheckIsHitPlayer();
             })
             .SetDelay(_scanDelay)
-            .OnStart(() =>
-            {
-                _eyeLightLeft.SetActive(true);
-                _eyeLightRight.SetActive(true);
-            })
-            .OnComplete(() => StopAttack());
+            .OnStart(_bossAnimator.Attack)
+            .OnComplete(StopAttack);
     }
 
     public void FakeScan()
@@ -67,24 +58,18 @@ public class BossController : MonoBehaviour
 
     private void CheckIsHitPlayer()
     {
-        if (_fovLeft.visibleTargets.Count > 0 || _fovRight.visibleTargets.Count > 0)
+        if (_fovLeft.visibleTargets.Count > 0)
         {
             onScanHitPlayer?.Invoke();
-            StopAttack(false);
+            StopAttack();
         }
     }
 
-    public void StopAttack(bool isDisappear = true)
+    public void StopAttack()
     {
         _isScanning = false;
         _scanTween?.Kill();
         _fovLeft.viewRadius = 0;
-        _fovRight.viewRadius = 0;
-        _eyeLightLeft.SetActive(false);
-        _eyeLightRight.SetActive(false);
-        if (isDisappear)
-        {
-            _bossAnimator.Disappear();
-        }
+        _bossAnimator.Disappear();
     }
 }

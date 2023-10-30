@@ -15,21 +15,21 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void OnEnable()
     {
-        GameplayObject.onTrigger += OnObjectTrigger;
-        
+        TriggerMapObject.onTrigger += OnObjectTrigger;
+
         InputController.OnTouchBegin += OnTouch;
         InputController.OnTouchEnd += OnRelease;
-        
+
         BossController.onScanHitPlayer += HandleLoseGame;
     }
 
     private void OnDisable()
     {
-        GameplayObject.onTrigger -= OnObjectTrigger;
-        
+        TriggerMapObject.onTrigger -= OnObjectTrigger;
+
         InputController.OnTouchBegin -= OnTouch;
         InputController.OnTouchEnd -= OnRelease;
-        
+
         BossController.onScanHitPlayer -= HandleLoseGame;
     }
 
@@ -41,8 +41,13 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     public async void Initialize()
     {
         await UniTask.Yield();
+        UIManager.Instance.HideAllViews();
         UIManager.Instance.GetView<UIViewMain>().Show();
-        _cameraController.Init();;
+        _map.Clear();
+        _cameraController.Init();
+        _player.Stop();
+        _map.Stop();
+        _map.SpawnCurrentLevel();
     }
 
     public void StartRun()
@@ -52,17 +57,16 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         _map.Move();
         _player.Run();
         _cameraController.ZoomOut();
-
     }
-    
+
     public void HandleWinGame()
     {
-        var gameData = DataManager.Instance.GameData;
-        gameData.fruits += 10;
-        gameData.currentLevel++;
-        
+        DataManager.Instance.GameData.fruits += 10;
+        DataManager.Instance.GameData.currentLevel++;
+        DataManager.Instance.Save();
         _map.Stop();
         _player.Stop();
+        UIManager.Instance.GetView<UIViewWin>().Show();
     }
 
     public void HandleLoseGame()
@@ -81,6 +85,9 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 DataManager.Instance.GameData.fruits++;
                 break;
             case GameplayObjectType.Slow:
+                break;
+            case GameplayObjectType.TriggerBoss:
+                _boss.Attack();
                 break;
             case GameplayObjectType.End:
                 HandleWinGame();

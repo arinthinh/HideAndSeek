@@ -10,6 +10,7 @@ public sealed class CameraController : MonoBehaviour
     public void Init()
     {
         _mainCamera = Camera.main;
+        Normalize();
     }
 
     public void ZoomOut()

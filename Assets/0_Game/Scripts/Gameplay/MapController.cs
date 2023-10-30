@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MapController : MonoBehaviour
@@ -11,6 +8,11 @@ public class MapController : MonoBehaviour
 
     private bool _isMove;
     private float _speedMultiple = 1;
+
+    public void SpawnCurrentLevel()
+    {
+        _mapObjectsManager.SpawnObjects(DataManager.Instance.GameData.currentLevel);
+    }
     
     public void Move()
     {
@@ -34,5 +36,10 @@ public class MapController : MonoBehaviour
         var moveAmount = _speed * Time.deltaTime * _speedMultiple;
         _mapGround.Scroll(moveAmount);
         _mapObjectsManager.Run(moveAmount);
+    }
+
+    public void Clear()
+    {
+        _mapObjectsManager.Clear();
     }
 }

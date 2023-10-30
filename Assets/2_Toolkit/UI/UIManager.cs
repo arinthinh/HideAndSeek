@@ -28,7 +28,7 @@ public class UIManager : SingletonMono<UIManager>
         return _viewsDic.ContainsKey(key) ? _viewsDic[key] as T : null;
     }
 
-    public void CloseAllViews()
+    public void HideAllViews()
     {
         foreach (var view in _views)
         {

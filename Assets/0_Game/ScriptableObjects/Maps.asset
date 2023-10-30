@@ -12,14 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c2a2b33da874b4a9b87a36222c3edc, type: 3}
   m_Name: Maps
   m_EditorClassIdentifier: 
-  _configs:
+  configs:
   - id: 0
     objects:
     - 
     - 
-    - Trigger
+    - 
+    - TriggerBoss
+    - 
     - 
     - Obs0
     - 
     - 
-    - End
+    - 
+    - EndPoint
+  - id: 1
+    objects:
+    - 
+    - 
+    - 
+    - TriggerBoss
+    - 
+    - 
+    - Obs1
+    - 
+    - 
+    - 
+    - 
+    - 
+    - TriggerBoss
+    - 
+    - 
+    - Obs1
+    - 
+    - 
+    - 
+    - EndPoint

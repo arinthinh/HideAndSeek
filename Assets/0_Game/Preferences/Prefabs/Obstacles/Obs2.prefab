@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5644605532255890688}
   - component: {fileID: 7473789783208679176}
   - component: {fileID: 2411957606956924584}
+  - component: {fileID: -6963842817708458082}
   m_Layer: 6
   m_Name: Obs2
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1849215731
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5c4633a78fdc0e24f9bf115ddf5e2a67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &-6963842817708458082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390902624479916728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116d99b1d16c224499dbba0c0d5c5bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

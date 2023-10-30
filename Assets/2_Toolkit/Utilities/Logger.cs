@@ -9,7 +9,7 @@ public static class Logger
         return $"<color={color}>{myStr}</color>";
     }
 
-    private static void DoLog(Action<string, Object> LogFunction, string prefix, Object myObj, params object[] msg)
+    private static void DoLog(Action<string, UnityEngine.Object> LogFunction, string prefix, UnityEngine.Object myObj, params object[] msg)
     {
 #if UNITY_EDITOR
         var name = (myObj ? myObj.name : "NullObject").Color("lightblue");
@@ -17,27 +17,27 @@ public static class Logger
 #endif
     }
 
-    public static void Log(this Object myObj, params object[] msg)
+    public static void Log(this UnityEngine.Object myObj, params object[] msg)
     {
         DoLog(Debug.Log, "", myObj, msg);
     }
 
-    public static void LogDetail(this Object myObj, params object[] msg)
+    public static void LogDetail(this UnityEngine.Object myObj, params object[] msg)
     {
         DoLog(Debug.Log, "➤".Color("blue"), myObj, msg);
     }
 
-    public static void LogError(this Object myObj, params object[] msg)
+    public static void LogError(this UnityEngine.Object myObj, params object[] msg)
     {
         DoLog(Debug.LogError, "<!>".Color("red"), myObj, msg);
     }
 
-    public static void LogWarning(this Object myObj, params object[] msg)
+    public static void LogWarning(this UnityEngine.Object myObj, params object[] msg)
     {
         DoLog(Debug.LogWarning, "⚠️".Color("yellow"), myObj, msg);
     }
 
-    public static void LogSuccess(this Object myObj, params object[] msg)
+    public static void LogSuccess(this UnityEngine.Object myObj, params object[] msg)
     {
         DoLog(Debug.Log, "☻".Color("green"), myObj, msg);
     }

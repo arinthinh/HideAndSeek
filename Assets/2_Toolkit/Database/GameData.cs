@@ -7,7 +7,7 @@ public class GameData
 {
     public GameData()
     {
-        currentLevel = 1;
+        currentLevel = 0;
         fruits = 0;
         skinOwned = new() { 0 };
     }

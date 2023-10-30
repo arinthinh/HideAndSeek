@@ -13,7 +13,7 @@ public class DataManager : SingletonMono<DataManager>
         PlayerPrefs
     }
 
-    [SerializeField] private string _dataKey = "GAME_DATA";
+    private readonly string _dataKey = "GAME_DATA";
     private GameData _gameData;
     public GameData GameData => _gameData;
 

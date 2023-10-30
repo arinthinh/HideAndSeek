@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4767348019065115491}
   - component: {fileID: 8344869150167902614}
+  - component: {fileID: -3009851130697448513}
   m_Layer: 0
   m_Name: Fruit
   m_TagString: Untagged
@@ -169,3 +170,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3009851130697448513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562425495943459737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb7069ae9e66e446a3e56b7c05d7921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 1

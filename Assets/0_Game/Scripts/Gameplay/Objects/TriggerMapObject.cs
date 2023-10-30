@@ -9,10 +9,10 @@ public enum GameplayObjectType
     Fruit,
     Slow,
     TriggerBoss,
-    End
+    End,
 }
 
-public class GameplayObject : MonoBehaviour
+public class TriggerMapObject : MapObject
 {
     public static event Action<GameplayObjectType> onTrigger;
 

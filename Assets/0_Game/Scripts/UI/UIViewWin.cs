@@ -10,15 +10,15 @@ public class UIViewWin : UIView
 
     private void OnEnable()
     {
-        _nextLevelButton.onClick.AddListener(OnTryAgainButtonClick);
+        _nextLevelButton.onClick.AddListener(OnNextLevelButtonClick);
     }
 
     private void OnDisable()
     {
-        _nextLevelButton.onClick.RemoveListener(OnTryAgainButtonClick);
+        _nextLevelButton.onClick.RemoveListener(OnNextLevelButtonClick);
     }
 
-    private void OnTryAgainButtonClick()
+    private void OnNextLevelButtonClick()
     {
         Hide();
         GameplayController.Instance.Initialize();
