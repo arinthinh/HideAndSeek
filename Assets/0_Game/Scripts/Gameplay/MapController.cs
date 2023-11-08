@@ -24,9 +24,14 @@ public class MapController : MonoBehaviour
         _isMove = false;
     }
 
-    public void Slowdown(float multiple)
+    public void Slowdown()
     {
-        _speedMultiple *= multiple;
+        _speedMultiple = 0.5f;
+    }
+    
+    public void Normalize()
+    {
+        _speedMultiple = 1f;
     }
     
     private void Update()

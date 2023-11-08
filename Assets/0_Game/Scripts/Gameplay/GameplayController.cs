@@ -72,7 +72,17 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     public void HandleLoseGame()
     {
         //_map.Stop();
-        UIManager.Instance.GetView<UIViewLose>().Show();
+        //UIManager.Instance.GetView<UIViewLose>().Show();
+        _map.Stop();
+        _player.Stop();
+        _input.SetEnable(false);
+    }
+
+    public void RevivePlayer()
+    {
+        _player.Run();
+        _map.Move();
+        _input.SetEnable(true);
     }
 
     private void OnObjectTrigger(GameplayObjectType objectType)
@@ -85,6 +95,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 DataManager.Instance.GameData.fruits++;
                 break;
             case GameplayObjectType.Slow:
+                OnSlow(1);
                 break;
             case GameplayObjectType.TriggerBoss:
                 _boss.Attack();
@@ -93,6 +104,15 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 HandleWinGame();
                 break;
         }
+    }
+
+    private void OnSlow(int time)
+    {
+        _map.Slowdown();
+        DOVirtual.DelayedCall(time, () =>
+        {
+            _map.Normalize();
+        });
     }
 
     private void OnTouch()
