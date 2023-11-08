@@ -18,5 +18,5 @@ public class MapConfigCollection : GameConfig
 public class MapConfig
 {
    public int id;
-   public List<string> objects;
+   public Transform mapPrefab;
 }

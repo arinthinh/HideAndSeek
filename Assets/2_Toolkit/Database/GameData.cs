@@ -5,13 +5,6 @@ using UnityEngine;
 [Serializable]
 public class GameData
 {
-    public GameData()
-    {
-        currentLevel = 0;
-        fruits = 0;
-        skinOwned = new() { 0 };
-    }
-
     public int currentLevel;
     public int fruits;
     public List<int> skinOwned;
