@@ -3,7 +3,7 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private MapObjectsManager _mapObjectsManager;
+    [SerializeField] private MapSpawner _mapSpawner;
     [SerializeField] private MapGroundController _mapGround;
 
     private bool _isMove;
@@ -11,7 +11,7 @@ public class MapController : MonoBehaviour
 
     public void SpawnCurrentLevel()
     {
-        _mapObjectsManager.SpawnObjects(DataManager.Instance.GameData.currentLevel);
+        _mapSpawner.SpawnMap(DataManager.Instance.GameData.currentLevel);
     }
     
     public void Move()
@@ -40,11 +40,11 @@ public class MapController : MonoBehaviour
         
         var moveAmount = _speed * Time.deltaTime * _speedMultiple;
         _mapGround.Scroll(moveAmount);
-        _mapObjectsManager.Run(moveAmount);
+        _mapSpawner.OnMapRun(moveAmount);
     }
 
     public void Clear()
     {
-        _mapObjectsManager.Clear();
+        _mapSpawner.Clear();
     }
 }

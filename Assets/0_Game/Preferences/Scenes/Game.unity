@@ -295,6 +295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5780c73beae97dc4ab9a8243a0fc6eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameData:
+    currentLevel: 1
+    fruits: 0
+    skinOwned: 00000000
 --- !u!224 &381882051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2243669297545432863, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}
@@ -1813,7 +1817,7 @@ GameObject:
   - component: {fileID: 713778044}
   - component: {fileID: 713778045}
   m_Layer: 0
-  m_Name: Objects
+  m_Name: MapSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _offSet: 1
-  _objectsContainer: {fileID: 713778044}
 --- !u!1 &726129770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +3347,7 @@ GameObject:
   - component: {fileID: 994454510}
   - component: {fileID: 994454511}
   m_Layer: 0
-  m_Name: Map
+  m_Name: MapController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,7 +3383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _mapObjectsManager: {fileID: 713778045}
+  _mapSpawner: {fileID: 713778045}
   _mapGround: {fileID: 3505120}
 --- !u!1 &1153162898
 GameObject:
@@ -3966,7 +3969,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _configs:
   - {fileID: 11400000, guid: 2da1a0a6b48b74d4ba6b7d081ee69cfb, type: 2}
-  - {fileID: 11400000, guid: c3bdfa54582b2ef419f0124d3b8a6041, type: 2}
   - {fileID: 11400000, guid: 77b81a35b8fc1df4c81dcc2701405a20, type: 2}
 --- !u!1 &1766206614
 GameObject:

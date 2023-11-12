@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName ="Maps", menuName = "ScriptableObject/Maps")]
 public class MapConfigCollection : GameConfig
@@ -10,7 +11,13 @@ public class MapConfigCollection : GameConfig
 
    public MapConfig GetMap(int id)
    {
-      return configs.FirstOrDefault(map => map.id == id);
+      var mapGet = configs.FirstOrDefault(map => map.id == id);
+      if (mapGet == null)
+      {
+         var random = Random.Range(0, configs.Count);
+         mapGet = configs[random];
+      }
+      return mapGet;
    }
 }
 

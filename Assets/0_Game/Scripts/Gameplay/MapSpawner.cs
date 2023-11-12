@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using Redcode.Extensions;
 using UnityEngine;
 
-public class MapObjectsManager : MonoBehaviour
+public class MapSpawner : MonoBehaviour
 {
     [SerializeField] private float _offSet;
-    
+
     private Transform _map;
 
-    public void Run(float moveAmount)
+    public void OnMapRun(float moveAmount)
     {
         _map.Translate(Vector3.left * moveAmount);
     }
 
     public void Clear()
     {
-        Destroy(_map);
+        if (_map != null)
+        {
+            Destroy(_map.gameObject);
+        }
         _map = null;
     }
 
-    public void SpawnObjects(int level)
+    public void SpawnMap(int level)
     {
-        var mapConfig = ConfigManager.Instance.GetConfig<MapConfigCollection>().GetMap(level); 
+        var mapConfig = ConfigManager.Instance.GetConfig<MapConfigCollection>().GetMap(level);
         _map = Instantiate(mapConfig.mapPrefab, transform);
     }
 }

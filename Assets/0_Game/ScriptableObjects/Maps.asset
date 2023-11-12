@@ -14,37 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configs:
   - id: 0
-    objects:
-    - 
-    - 
-    - 
-    - TriggerBoss
-    - 
-    - 
-    - Obs0
-    - 
-    - 
-    - 
-    - EndPoint
+    mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
   - id: 1
-    objects:
-    - 
-    - 
-    - 
-    - TriggerBoss
-    - 
-    - 
-    - Obs1
-    - 
-    - 
-    - 
-    - 
-    - 
-    - TriggerBoss
-    - 
-    - 
-    - Obs1
-    - Fruit
-    - Fruit
-    - Fruit
-    - EndPoint
+    mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
