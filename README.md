@@ -1,6 +1,6 @@
 
 # TLTN_HIDE AND SEEK
-*Repository này là sản phẩm đầu ra của bài tiểu luận "Xây dựng ứng dụng trò chơi sử dụng Unity Engine*
+*Repository này là sản phẩm đầu ra của bài tiểu luận "Xây dựng ứng dụng trò chơi sử dụng Unity Engine"*
 
 ***
 
