@@ -33,14 +33,7 @@ public class ShopUIItem : MonoBehaviour
     private void LoadData()
     {
         _isLock = !DataManager.Instance.GameData.skinOwned.Contains(_skinId);
-        if (_isLock)
-        {
-            _skinPricePanel.SetActive(true);
-        }
-        else
-        {
-            _skinPricePanel.SetActive(false);
-        }
+        _skinPricePanel.SetActive(_isLock);
     }
     
     private void OnDisable()
@@ -60,6 +53,7 @@ public class ShopUIItem : MonoBehaviour
             }
             else
             {
+                DataManager.Instance.OnBuySkin(_skinId, _skinPrice);
                 PlayerController.Instance.ChangeSkin(_skinId);
                 _skinPricePanel.SetActive(false);
             }

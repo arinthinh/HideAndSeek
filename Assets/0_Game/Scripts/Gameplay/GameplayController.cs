@@ -137,7 +137,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     private void OnBoots(int time)
     {
         _map.Boots();
-        DOVirtual.DelayedCall(time, () => _map.Normalize());
+        DOVirtual.DelayedCall(time, _map.Normalize);
     }
 
     private void OnInvi(int time)

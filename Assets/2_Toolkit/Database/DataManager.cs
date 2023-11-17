@@ -40,4 +40,15 @@ public class DataManager : SingletonMono<DataManager>
         var dataString = JsonUtility.ToJson(_gameData);
         PlayerPrefs.SetString(DATA_KEY, dataString);
     }
+    
+    // DATA HELPERS
+    public void OnBuySkin(int skinId, int skinPrice)
+    {
+        _gameData.fruits -= skinPrice;
+        if (!_gameData.skinOwned.Contains(skinId))
+        {
+            _gameData.skinOwned.Add(skinId);
+        }
+        Save();
+    }
 }
