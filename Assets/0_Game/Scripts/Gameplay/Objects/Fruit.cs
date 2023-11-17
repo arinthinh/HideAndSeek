@@ -9,7 +9,6 @@ public class Fruit : TriggerMapObject
     
     protected override async void HandleAfterTrigger()
     {
-        base.HandleAfterTrigger();
         _animator.Play("Fruit_Disappear");
         await UniTask.Delay(500, DelayType.DeltaTime, cancellationToken: this.destroyCancellationToken);
         gameObject.SetActive(false);

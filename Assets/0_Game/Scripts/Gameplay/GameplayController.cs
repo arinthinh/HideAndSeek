@@ -103,16 +103,47 @@ public sealed class GameplayController : SingletonMono<GameplayController>
             case GameplayObjectType.End:
                 HandleWinGame();
                 break;
+            case GameplayObjectType.Stun:
+                OnStun(1);
+                break;
+            case GameplayObjectType.Boots:
+                OnBoots(1);
+                break;
+            case GameplayObjectType.Invi:
+                OnInvi(1);
+                break;
         }
     }
 
     private void OnSlow(int time)
     {
         _map.Slowdown();
+        DOVirtual.DelayedCall(time, () => { _map.Normalize(); });
+    }
+
+    private void OnStun(int time)
+    {
+        _map.Stop();
+        _player.Stop();
+        _input.SetEnable(false);
         DOVirtual.DelayedCall(time, () =>
         {
+            _input.SetEnable(true);
             _map.Normalize();
+            _player.Run();
         });
+    }
+
+    private void OnBoots(int time)
+    {
+        _map.Boots();
+        DOVirtual.DelayedCall(time, () => _map.Normalize());
+    }
+
+    private void OnInvi(int time)
+    {
+        _boss.OnInvi(true);
+        DOVirtual.DelayedCall(time, () => _boss.OnInvi(false));
     }
 
     private void OnTouch()

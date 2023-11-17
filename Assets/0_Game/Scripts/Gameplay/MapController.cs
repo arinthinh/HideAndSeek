@@ -13,7 +13,7 @@ public class MapController : MonoBehaviour
     {
         _mapSpawner.SpawnMap(DataManager.Instance.GameData.currentLevel);
     }
-    
+
     public void Move()
     {
         _isMove = true;
@@ -28,16 +28,21 @@ public class MapController : MonoBehaviour
     {
         _speedMultiple = 0.5f;
     }
-    
+
+    public void Boots()
+    {
+        _speedMultiple = 2f;
+    }
+
     public void Normalize()
     {
         _speedMultiple = 1f;
     }
-    
+
     private void Update()
     {
-        if(!_isMove) return;
-        
+        if (!_isMove) return;
+
         var moveAmount = _speed * Time.deltaTime * _speedMultiple;
         _mapGround.Scroll(moveAmount);
         _mapSpawner.OnMapRun(moveAmount);

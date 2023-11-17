@@ -3551,6 +3551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1634076090}
+  _spriteRenderer: {fileID: 0}
 --- !u!50 &1257569081
 Rigidbody2D:
   serializedVersion: 4

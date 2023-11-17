@@ -10,6 +10,9 @@ public enum GameplayObjectType
     Slow,
     TriggerBoss,
     End,
+    Stun,
+    Boots,
+    Invi
 }
 
 public class TriggerMapObject : MapObject
@@ -17,7 +20,9 @@ public class TriggerMapObject : MapObject
     public static event Action<GameplayObjectType> onTrigger;
 
     [SerializeField] protected GameplayObjectType _type;
-
+    [SerializeField] protected GameObject _avatar;
+    [SerializeField] protected bool _isDisableAfterTrigger = false;
+    
     protected bool _isTriggered;
 
     protected void OnTriggerEnter2D(Collider2D other)
@@ -33,6 +38,10 @@ public class TriggerMapObject : MapObject
 
     protected virtual void HandleAfterTrigger()
     {
+        if(_isDisableAfterTrigger)
+        {
+            _avatar.SetActive(false);
+        }
         
     }
     

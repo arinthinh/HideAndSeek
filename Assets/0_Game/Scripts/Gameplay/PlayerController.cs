@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : SingletonMono<PlayerController>
 {
     [SerializeField] private Animator _animator;
-    
-    public void Init()
-    {
-        
-    }
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public void Run()
     {
@@ -25,5 +21,11 @@ public class PlayerController : MonoBehaviour
     {
         _animator.Play("MaskDude_Idle");
     }
-    
+
+    public void ChangeSkin(int id)
+    {
+        var config = ConfigManager.Instance.GetConfig<CharacterSkinConfigCollection>().GetSkin(id);
+        _spriteRenderer.sprite = config.baseSkin;
+        _animator.runtimeAnimatorController = config.animator;
+    }
 }

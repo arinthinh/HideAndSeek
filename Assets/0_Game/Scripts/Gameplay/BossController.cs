@@ -22,6 +22,7 @@ public class BossController : MonoBehaviour
     // Private fields
     private bool _isScanning;
     private float _scanRadius;
+    private bool _isInvi;
 
     private Tween _scanTween;
     private Tween _stopScanTween;
@@ -29,6 +30,7 @@ public class BossController : MonoBehaviour
     // Methods
     public void Init()
     {
+        
     }
 
     public void Attack()
@@ -52,12 +54,9 @@ public class BossController : MonoBehaviour
             .OnComplete(StopAttack);
     }
 
-    public void FakeScan()
-    {
-    }
-
     private void CheckIsHitPlayer()
     {
+        if(_isInvi) return;
         if (_fovLeft.visibleTargets.Count > 0)
         {
             onScanHitPlayer?.Invoke();
@@ -71,5 +70,10 @@ public class BossController : MonoBehaviour
         _scanTween?.Kill();
         _fovLeft.viewRadius = 0;
         _bossAnimator.Disappear();
+    }
+
+    public void OnInvi(bool isInvi)
+    {
+        _isInvi = isInvi;
     }
 }
