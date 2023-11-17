@@ -15,6 +15,7 @@ public class GameData
     public int currentLevel;
     public int fruits;
     public List<int> skinOwned;
+    public int currentSkin;
 }
 
 

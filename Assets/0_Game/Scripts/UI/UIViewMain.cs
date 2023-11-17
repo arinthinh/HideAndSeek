@@ -1,3 +1,4 @@
+using TMPro;
 using Toolkit.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class UIViewMain : UIView
     [SerializeField] private Button _settingButton;
     [SerializeField] private Button _shopButton;
     [SerializeField] private Button _startButton;
+    [SerializeField] private TextMeshProUGUI _currentFruitTMP;
 
     private void OnEnable()
     {
@@ -36,5 +38,11 @@ public class UIViewMain : UIView
     {
         Hide();
         GameplayController.Instance.StartRun();
+    }
+    
+    private void FixedUpdate()
+    {
+        if(_isShowing)
+            _currentFruitTMP.text = DataManager.Instance.GameData.fruits.ToString();
     }
 }

@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9189af9b657ff04daa777d3c61bcb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 14
+  _offset: 9
   _ground1: {fileID: 635956591}
   _ground2: {fileID: 726129771}
 --- !u!224 &173817923 stripped
@@ -299,6 +299,7 @@ MonoBehaviour:
     currentLevel: 1
     fruits: 0
     skinOwned: 00000000
+    currentSkin: 0
 --- !u!224 &381882051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2243669297545432863, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}
@@ -389,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 635956590}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1878,7 +1879,7 @@ Transform:
   m_GameObject: {fileID: 726129770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3251,7 +3252,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4454,10 +4455,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1642112266}
     m_Modifications:
-    - target: {fileID: 1455177015118769127, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}
-      propertyPath: m_BlockingMask.m_Bits
-      value: 247
-      objectReference: {fileID: 0}
     - target: {fileID: 2243669297545432863, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4559,10 +4556,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: View_Gameplay
       objectReference: {fileID: 0}
-    - target: {fileID: 1926657311053854590, guid: f193a02c3e170944bba761c6d2f70483, type: 3}
-      propertyPath: m_BlockingMask.m_Bits
-      value: 247
-      objectReference: {fileID: 0}
     - target: {fileID: 3969583207470241129, guid: f193a02c3e170944bba761c6d2f70483, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4643,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4636305958987656437, guid: f193a02c3e170944bba761c6d2f70483, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4659,6 +4656,10 @@ PrefabInstance:
     - target: {fileID: 991925622292924047, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
       propertyPath: m_Name
       value: View_Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158660624832433024, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3341157229276780509, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
       propertyPath: m_Pivot.x
@@ -4940,6 +4941,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632907880987829041, guid: 38fd7209e7835e64b8cb1dee18dcb494, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065325592249473110, guid: 38fd7209e7835e64b8cb1dee18dcb494, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

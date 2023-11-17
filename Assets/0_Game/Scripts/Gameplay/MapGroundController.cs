@@ -14,13 +14,13 @@ public class MapGroundController : MonoBehaviour
 
     public void Scroll(float moveAmount)
     {
-        if (_currentBackgroundShow == 1 && _ground2.position.x <= 0)
+        if (_currentBackgroundShow == 1 && _ground2.position.x <= -5)
         {
             _currentBackgroundShow = 2;
             _ground1.SetPositionX(_offset);
         }
         
-        if (_currentBackgroundShow == 2 && _ground1.position.x <= 0)
+        if (_currentBackgroundShow == 2 && _ground1.position.x <= -5)
         {
             _currentBackgroundShow = 1;
             _ground2.SetPositionX(_offset);
