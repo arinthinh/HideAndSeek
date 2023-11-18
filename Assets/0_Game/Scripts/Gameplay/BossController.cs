@@ -76,4 +76,9 @@ public class BossController : MonoBehaviour
     {
         _isInvi = isInvi;
     }
+
+    public void Hide()
+    {
+        _bossAnimator.Disappear();
+    }
 }

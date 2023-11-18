@@ -12,7 +12,8 @@ public enum GameplayObjectType
     End,
     Stun,
     Boots,
-    Invi
+    Invi,
+    Blind
 }
 
 public class TriggerMapObject : MapObject

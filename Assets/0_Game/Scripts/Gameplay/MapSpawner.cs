@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MapSpawner : MonoBehaviour
 {
-    [SerializeField] private float _offSet;
-
     private Transform _map;
 
     public void OnMapRun(float moveAmount)

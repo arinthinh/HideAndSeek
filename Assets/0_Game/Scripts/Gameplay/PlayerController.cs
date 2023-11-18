@@ -22,6 +22,11 @@ public class PlayerController : SingletonMono<PlayerController>
         _animator.Play("MaskDude_Idle");
     }
 
+    public void Die()
+    {
+        _animator.Play("MaskDude_Die");
+    }
+
     public void ChangeSkin(int id)
     {
         var config = ConfigManager.Instance.GetConfig<CharacterSkinConfigCollection>().GetSkin(id);

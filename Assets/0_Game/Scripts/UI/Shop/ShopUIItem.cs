@@ -52,7 +52,7 @@ public class ShopUIItem : MonoBehaviour
         {
             var currentFruit = DataManager.Instance.GameData.fruits;
             // If have enough fruits
-            if (currentFruit < _skinPrice)
+            if (currentFruit >= _skinPrice)
             {
                 DataManager.Instance.OnBuySkin(_skinId, _skinPrice);
                 PlayerController.Instance.ChangeSkin(_skinId);

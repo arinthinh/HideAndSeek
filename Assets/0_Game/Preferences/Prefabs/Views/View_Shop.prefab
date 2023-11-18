@@ -214,7 +214,7 @@ MonoBehaviour:
   _skinId: 2
   _skinPrice: 30
   _skinPricePanel: {fileID: 1890634930964365163}
-  _selectedPanel: {fileID: 0}
+  _selectedPanel: {fileID: 6786394759546650457}
 --- !u!1 &526965954037948880
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   _skinId: 1
   _skinPrice: 20
   _skinPricePanel: {fileID: 3797629547427664920}
-  _selectedPanel: {fileID: 0}
+  _selectedPanel: {fileID: 1502673259309382659}
 --- !u!1 &1502673259309382659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   _skinId: 3
   _skinPrice: 40
   _skinPricePanel: {fileID: 8924847948176421886}
-  _selectedPanel: {fileID: 0}
+  _selectedPanel: {fileID: 7459256983970606082}
 --- !u!1 &3515970928650099346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   _skinId: 0
   _skinPrice: 0
   _skinPricePanel: {fileID: 4257173652706666375}
-  _selectedPanel: {fileID: 0}
+  _selectedPanel: {fileID: 1181897487391662319}
 --- !u!1 &5380970946848533480
 GameObject:
   m_ObjectHideFlags: 0

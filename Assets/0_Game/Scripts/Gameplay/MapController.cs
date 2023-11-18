@@ -31,7 +31,7 @@ public class MapController : MonoBehaviour
 
     public void Boots()
     {
-        _speedMultiple = 2f;
+        _speedMultiple = 3f;
     }
 
     public void Normalize()

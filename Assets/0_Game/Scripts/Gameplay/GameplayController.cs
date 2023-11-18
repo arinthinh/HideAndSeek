@@ -43,6 +43,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         await UniTask.Yield();
         UIManager.Instance.HideAllViews();
         UIManager.Instance.GetView<UIViewMain>().Show();
+        _input.SetEnable(false);
         _map.Clear();
         _cameraController.Init();
         _player.Stop();
@@ -72,9 +73,14 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     public void HandleLoseGame()
     {
         //_map.Stop();
-        //UIManager.Instance.GetView<UIViewLose>().Show();
+        _boss.Hide();
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            UIManager.Instance.GetView<UIViewLose>().Show();
+        });
+        
         _map.Stop();
-        _player.Stop();
+        _player.Die();
         _input.SetEnable(false);
     }
 
@@ -107,10 +113,13 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 OnStun(1);
                 break;
             case GameplayObjectType.Boots:
-                OnBoots(1);
+                OnBoots();
                 break;
             case GameplayObjectType.Invi:
-                OnInvi(1);
+                OnInvi();
+                break;
+            case GameplayObjectType.Blind:
+                OnBlind();
                 break;
         }
     }
@@ -134,18 +143,23 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         });
     }
 
-    private void OnBoots(int time)
+    private void OnBoots()
     {
         _map.Boots();
-        DOVirtual.DelayedCall(time, _map.Normalize);
+        DOVirtual.DelayedCall(2, _map.Normalize);
     }
 
-    private void OnInvi(int time)
+    private void OnInvi()
     {
         _boss.OnInvi(true);
-        DOVirtual.DelayedCall(time, () => _boss.OnInvi(false));
+        DOVirtual.DelayedCall(1, () => _boss.OnInvi(false));
     }
 
+    private void OnBlind()
+    {
+        UIManager.Instance.GetView<UIViewGameplay>().OnBlind(0.5f);
+    }
+    
     private void OnTouch()
     {
         _player.Stop();

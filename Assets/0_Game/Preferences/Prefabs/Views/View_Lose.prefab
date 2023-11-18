@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tryAgainButton: {fileID: 7807196100869256427}
+  _titleImage: {fileID: 2438679649408983732}
 --- !u!1 &909407242025971869
 GameObject:
   m_ObjectHideFlags: 0

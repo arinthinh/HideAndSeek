@@ -1851,7 +1851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ca8e8e4f9d17d41ac6de549384a6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offSet: 1
 --- !u!1 &726129770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,7 +4047,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1825119024, guid: 200b2a6a7f5732149b64dc64cca7e0b5, type: 3}
+  m_Sprite: {fileID: -2030297537, guid: 23591e0ec5599304aad690a71be5dac5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4539,6 +4538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: View_Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 8948519305197102413, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4659,7 +4662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158660624832433024, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3341157229276780509, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
       propertyPath: m_Pivot.x
@@ -4739,6 +4742,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3341157229276780509, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072364918363864975, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072364918363864975, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072364918363864975, guid: 3fcba2c0ef075ff4e89f4c3bed765d0e, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

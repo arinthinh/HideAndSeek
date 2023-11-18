@@ -15,8 +15,8 @@ public sealed class CameraController : MonoBehaviour
 
     public void ZoomOut()
     {
-        _mainCamera.DOOrthoSize(5, 1f);
-        _mainCamera.transform.DOMove(new Vector3(1, 1.5f, -10), 1f);
+        //_mainCamera.DOOrthoSize(5, 1f);
+        _mainCamera.transform.DOMove(new Vector3(1, 0, -10), 1f);
     }
 
     public void Normalize()

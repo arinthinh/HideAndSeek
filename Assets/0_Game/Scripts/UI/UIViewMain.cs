@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using Toolkit.UI;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class UIViewMain : UIView
     [SerializeField] private Button _shopButton;
     [SerializeField] private Button _startButton;
     [SerializeField] private TextMeshProUGUI _currentFruitTMP;
+    [SerializeField] private Image _transitionImage;
 
     private void OnEnable()
     {
@@ -22,6 +24,21 @@ public class UIViewMain : UIView
         _settingButton.onClick.RemoveAllListeners();
         _shopButton.onClick.RemoveAllListeners();
         _startButton.onClick.RemoveAllListeners();
+    }
+
+    public override void Show()
+    {
+        base.Show();
+        _transitionImage.color = Color.black;
+        _transitionImage.gameObject.SetActive(true);
+        _transitionImage.DOFade(0, 0.3f)
+            .SetDelay(0.3f)
+            .OnComplete(()=>_transitionImage.gameObject.SetActive(false));
+    }
+
+    public override void Hide()
+    {
+        base.Hide();
     }
 
     private void OnSettingButtonClick()
