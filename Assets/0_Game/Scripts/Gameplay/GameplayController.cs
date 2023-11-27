@@ -11,7 +11,8 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     [SerializeField] private BossController _boss;
     [SerializeField] private MapController _map;
     [SerializeField] private InputController _input;
-    [SerializeField] private CameraController _cameraController;
+
+    private List<Tween> _effectTweens = new();
 
     private void OnEnable()
     {
@@ -45,7 +46,6 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         UIManager.Instance.GetView<UIViewMain>().Show();
         _input.SetEnable(false);
         _map.Clear();
-        _cameraController.Init();
         _player.Stop();
         _map.Stop();
         _map.SpawnCurrentLevel();
@@ -57,7 +57,6 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         _input.SetEnable(true);
         _map.Move();
         _player.Run();
-        _cameraController.ZoomOut();
     }
 
     public void HandleWinGame()
@@ -74,11 +73,8 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     {
         //_map.Stop();
         _boss.Hide();
-        DOVirtual.DelayedCall(0.5f, () =>
-        {
-            UIManager.Instance.GetView<UIViewLose>().Show();
-        });
-        
+        DOVirtual.DelayedCall(0.5f, () => { UIManager.Instance.GetView<UIViewLose>().Show(); });
+
         _map.Stop();
         _player.Die();
         _input.SetEnable(false);
@@ -110,7 +106,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 HandleWinGame();
                 break;
             case GameplayObjectType.Stun:
-                OnStun(1);
+                OnStun(2);
                 break;
             case GameplayObjectType.Boots:
                 OnBoots();
@@ -127,7 +123,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     private void OnSlow(int time)
     {
         _map.Slowdown();
-        DOVirtual.DelayedCall(time, () => { _map.Normalize(); });
+        _effectTweens.Add(DOVirtual.DelayedCall(time, () => { _map.Normalize(); }));
     }
 
     private void OnStun(int time)
@@ -135,31 +131,40 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         _map.Stop();
         _player.Stop();
         _input.SetEnable(false);
-        DOVirtual.DelayedCall(time, () =>
+        _effectTweens.Add(DOVirtual.DelayedCall(time, () =>
         {
             _input.SetEnable(true);
             _map.Normalize();
             _player.Run();
-        });
+        }));
     }
 
     private void OnBoots()
     {
         _map.Boots();
-        DOVirtual.DelayedCall(2, _map.Normalize);
+        _effectTweens.Add(DOVirtual.DelayedCall(2, _map.Normalize));
     }
 
     private void OnInvi()
     {
         _boss.OnInvi(true);
-        DOVirtual.DelayedCall(1, () => _boss.OnInvi(false));
+        _effectTweens.Add(DOVirtual.DelayedCall(1, () => _boss.OnInvi(false)));
     }
 
     private void OnBlind()
     {
         UIManager.Instance.GetView<UIViewGameplay>().OnBlind(0.5f);
     }
-    
+
+    private void RemoveAllEffect()
+    {
+        foreach (var effect in _effectTweens)
+        {
+            effect.Kill();
+        }
+        _effectTweens.Clear();
+    }
+
     private void OnTouch()
     {
         _player.Stop();

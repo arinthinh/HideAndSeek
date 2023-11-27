@@ -16,4 +16,6 @@ MonoBehaviour:
   - id: 0
     mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
   - id: 1
-    mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
+    mapPrefab: {fileID: 570777523041012607, guid: 7930493a9fee54a4a938dee8f4938f01, type: 3}
+  - id: 2
+    mapPrefab: {fileID: 570777523041012607, guid: 7a05e9c795d553343a396d05a1ac0aa6, type: 3}
