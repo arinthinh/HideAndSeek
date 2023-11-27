@@ -12,7 +12,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     [SerializeField] private MapController _map;
     [SerializeField] private InputController _input;
 
-    private List<Tween> _effectTweens = new();
+    private readonly List<Tween> _effectTweens = new();
 
     private void OnEnable()
     {
@@ -42,42 +42,48 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     public async void Initialize()
     {
         await UniTask.Yield();
-        UIManager.Instance.HideAllViews();
-        UIManager.Instance.GetView<UIViewMain>().Show();
+        
         _input.SetEnable(false);
         _map.Clear();
         _player.Stop();
         _map.Stop();
         _map.SpawnCurrentLevel();
+        
+        UIManager.Instance.HideAllViews();
+        UIManager.Instance.GetView<UIViewMain>().Show();
     }
 
     public void StartRun()
     {
-        UIManager.Instance.GetView<UIViewGameplay>().Show();
-        _input.SetEnable(true);
         _map.Move();
         _player.Run();
+        _input.SetEnable(true);
+        
+        UIManager.Instance.GetView<UIViewGameplay>().Show();
     }
 
     public void HandleWinGame()
     {
-        DataManager.Instance.GameData.fruits += 10;
-        DataManager.Instance.GameData.currentLevel++;
-        DataManager.Instance.Save();
+        RemoveAllEffect();
+        
         _map.Stop();
         _player.Stop();
+        _input.SetEnable(false);
+        
+        DataManager.Instance.OnWinGame();
         UIManager.Instance.GetView<UIViewWin>().Show();
     }
 
     public void HandleLoseGame()
     {
-        //_map.Stop();
-        _boss.Hide();
-        DOVirtual.DelayedCall(0.5f, () => { UIManager.Instance.GetView<UIViewLose>().Show(); });
+        RemoveAllEffect();
 
+        _boss.Hide();
         _map.Stop();
         _player.Die();
         _input.SetEnable(false);
+        
+        DOVirtual.DelayedCall(0.5f, () => { UIManager.Instance.GetView<UIViewLose>().Show(); });
     }
 
     public void RevivePlayer()
@@ -106,7 +112,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
                 HandleWinGame();
                 break;
             case GameplayObjectType.Stun:
-                OnStun(2);
+                OnStun(1.5f);
                 break;
             case GameplayObjectType.Boots:
                 OnBoots();
@@ -126,7 +132,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         _effectTweens.Add(DOVirtual.DelayedCall(time, () => { _map.Normalize(); }));
     }
 
-    private void OnStun(int time)
+    private void OnStun(float time)
     {
         _map.Stop();
         _player.Stop();

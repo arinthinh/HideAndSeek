@@ -7,7 +7,7 @@ using UnityEngine;
 public class DataManager : SingletonMono<DataManager>
 {
     [SerializeField] private GameData _gameData;
-    
+
     private const string DATA_KEY = "GAME_DATA";
     public GameData GameData => _gameData;
 
@@ -40,7 +40,7 @@ public class DataManager : SingletonMono<DataManager>
         var dataString = JsonUtility.ToJson(_gameData);
         PlayerPrefs.SetString(DATA_KEY, dataString);
     }
-    
+
     // DATA HELPERS
     public void OnBuySkin(int skinId, int skinPrice)
     {
@@ -49,6 +49,13 @@ public class DataManager : SingletonMono<DataManager>
         {
             _gameData.skinOwned.Add(skinId);
         }
+        Save();
+    }
+
+    public void OnWinGame()
+    {
+        _gameData.currentLevel++;
+        _gameData.fruits += 10;
         Save();
     }
 }
