@@ -29,6 +29,12 @@ public class UIViewSetting : UIView
         _soundButton.onClick.RemoveListener(OnSoundButtonClick);
     }
 
+    public override void Init()
+    {
+        base.Init();
+        CheckSoundAndMusicStatus();
+    }
+
     public override void Show()
     {
         base.Show();
@@ -43,17 +49,20 @@ public class UIViewSetting : UIView
 
     public void OnCloseButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         Hide();
     }
 
     public void OnMusicButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         DataManager.Instance.GameData.isMusicOn = !DataManager.Instance.GameData.isMusicOn;
         CheckSoundAndMusicStatus();
     }
 
     public void OnSoundButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         DataManager.Instance.GameData.isSoundOn = !DataManager.Instance.GameData.isSoundOn;
         CheckSoundAndMusicStatus();
     }
@@ -64,7 +73,7 @@ public class UIViewSetting : UIView
         var isSoundOn = DataManager.Instance.GameData.isSoundOn;
         AudioManager.MusicMuted = !isMusicOn;
         AudioManager.SoundMuted = !isSoundOn;
-        _muteSoundMark.gameObject.SetActive(!AudioManager.SoundMuted);
-        _muteMusicMark.gameObject.SetActive(!AudioManager.MusicMuted);
+        _muteSoundMark.gameObject.SetActive(AudioManager.SoundMuted);
+        _muteMusicMark.gameObject.SetActive(AudioManager.MusicMuted);
     }
 }

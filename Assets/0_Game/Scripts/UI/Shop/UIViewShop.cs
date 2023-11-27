@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JSAM;
 using TMPro;
 using Toolkit.UI;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class UIViewShop : UIView
 
      private void OnCloseButtonClick()
      {
+          AudioManager.PlaySound(Sound.Click);
           Hide();
      }
      

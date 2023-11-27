@@ -11,8 +11,7 @@ public class UIViewGameplay : UIView
     [SerializeField] private TextMeshProUGUI _currentFruitTMP;
     [SerializeField] private RectTransform _currentLevelTrans;
     [SerializeField] private GameObject _blindPanel;
-
-
+    
     public override void Init()
     {
         base.Init();

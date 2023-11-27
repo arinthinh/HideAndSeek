@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using JSAM;
 using Toolkit.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,7 @@ public class UIViewLose : UIView
     private void OnTryAgainButtonClick()
     {
         Hide();
+        AudioManager.PlaySound(Sound.Click);
         GameplayController.Instance.Initialize();
     }
 }

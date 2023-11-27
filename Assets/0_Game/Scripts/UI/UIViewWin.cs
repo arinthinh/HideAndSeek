@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Coffee.UIExtensions;
 using DG.Tweening;
+using JSAM;
 using Toolkit.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,7 @@ public class UIViewWin : UIView
 
     private void OnNextLevelButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         Hide();
         GameplayController.Instance.Initialize();
     }

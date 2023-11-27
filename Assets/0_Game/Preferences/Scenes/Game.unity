@@ -300,6 +300,8 @@ MonoBehaviour:
     fruits: 0
     skinOwned: 00000000
     currentSkin: 0
+    isMusicOn: 0
+    isSoundOn: 0
 --- !u!224 &381882051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2243669297545432863, guid: 4636241a0e02f6c4f99d70f56ca6b326, type: 3}

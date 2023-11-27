@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using JSAM;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -30,7 +31,6 @@ public class BossController : MonoBehaviour
     // Methods
     public void Init()
     {
-        
     }
 
     public void Attack()
@@ -50,35 +50,39 @@ public class BossController : MonoBehaviour
                 CheckIsHitPlayer();
             })
             .SetDelay(_scanDelay)
-            .OnStart(_bossAnimator.Attack)
+            .OnStart(() =>
+            {
+                _bossAnimator.Attack();
+                AudioManager.PlaySound(Sound.Lazer);
+            })
             .OnComplete(StopAttack);
     }
 
-    private void CheckIsHitPlayer()
+private void CheckIsHitPlayer()
+{
+    if (_isInvi) return;
+    if (_fovLeft.visibleTargets.Count > 0)
     {
-        if(_isInvi) return;
-        if (_fovLeft.visibleTargets.Count > 0)
-        {
-            onScanHitPlayer?.Invoke();
-            StopAttack();
-        }
+        onScanHitPlayer?.Invoke();
+        StopAttack();
     }
+}
 
-    public void StopAttack()
-    {
-        _isScanning = false;
-        _scanTween?.Kill();
-        _fovLeft.viewRadius = 0;
-        _bossAnimator.Disappear();
-    }
+public void StopAttack()
+{
+    _isScanning = false;
+    _scanTween?.Kill();
+    _fovLeft.viewRadius = 0;
+    _bossAnimator.Disappear();
+}
 
-    public void OnInvi(bool isInvi)
-    {
-        _isInvi = isInvi;
-    }
+public void OnInvi(bool isInvi)
+{
+    _isInvi = isInvi;
+}
 
-    public void Hide()
-    {
-        _bossAnimator.Disappear();
-    }
+public void Hide()
+{
+    _bossAnimator.Disappear();
+}
 }

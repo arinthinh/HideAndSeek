@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using JSAM;
 using UnityEngine;
 
 public sealed class GameplayController : SingletonMono<GameplayController>
@@ -36,6 +37,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void Start()
     {
+        AudioManager.PlayMusic(Music.BGM);
         Initialize();
     }
 
@@ -55,6 +57,8 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     public void StartRun()
     {
+        AudioManager.PlaySound(Sound.Start);
+        
         _map.Move();
         _player.Run();
         _input.SetEnable(true);
@@ -64,6 +68,8 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     public void HandleWinGame()
     {
+        AudioManager.PlaySound(Sound.Win);
+
         RemoveAllEffect();
         
         _map.Stop();
@@ -76,6 +82,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     public void HandleLoseGame()
     {
+        AudioManager.PlaySound(Sound.ScanHit);
         RemoveAllEffect();
 
         _boss.Hide();
@@ -100,6 +107,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
             case GameplayObjectType.Obstacles:
                 break;
             case GameplayObjectType.Fruit:
+                AudioManager.PlaySound(Sound.FruitCollect);
                 DataManager.Instance.GameData.fruits++;
                 break;
             case GameplayObjectType.Slow:
@@ -128,6 +136,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void OnSlow(int time)
     {
+        AudioManager.PlaySound(Sound.Slow);
         _map.Slowdown();
         _effectTweens.Add(DOVirtual.DelayedCall(time, () => { _map.Normalize(); }));
     }
@@ -173,6 +182,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void OnTouch()
     {
+        AudioManager.PlaySound(Sound.Hide);
         _player.Stop();
         _map.Stop();
     }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using JSAM;
 using TMPro;
 using Toolkit.UI;
 using UnityEngine;
@@ -43,17 +44,20 @@ public class UIViewMain : UIView
 
     private void OnSettingButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         UIManager.Instance.GetView<UIViewSetting>().Show();
     }
 
     private void OnShopButtonClick()
     {
+        AudioManager.PlaySound(Sound.Click);
         UIManager.Instance.GetView<UIViewShop>().Show();
     }
 
     private void OnStartButtonClick()
     {
         Hide();
+        AudioManager.PlaySound(Sound.Click);
         GameplayController.Instance.StartRun();
     }
     
