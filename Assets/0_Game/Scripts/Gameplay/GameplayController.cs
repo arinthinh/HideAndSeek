@@ -143,6 +143,8 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void OnStun(float time)
     {
+        AudioManager.PlaySound(Sound.Eat);
+
         _map.Stop();
         _player.Stop();
         _input.SetEnable(false);
@@ -156,6 +158,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
 
     private void OnBoots()
     {
+        AudioManager.PlaySound(Sound.Boots);
         _map.Boots();
         _effectTweens.Add(DOVirtual.DelayedCall(2, _map.Normalize));
     }
