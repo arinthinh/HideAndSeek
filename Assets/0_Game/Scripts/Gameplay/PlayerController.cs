@@ -7,6 +7,12 @@ public class PlayerController : SingletonMono<PlayerController>
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    public void Init()
+    {
+        var currentSkin = DataManager.Instance.GameData.currentSkin;
+        ChangeSkin(currentSkin);
+    }
+    
     public void Run()
     {
         _animator.Play("MaskDude_Run");
@@ -30,7 +36,7 @@ public class PlayerController : SingletonMono<PlayerController>
     public void ChangeSkin(int id)
     {
         var config = ConfigManager.Instance.GetConfig<CharacterSkinConfigCollection>().GetSkin(id);
-        _spriteRenderer.sprite = config.baseSkin;
+          _spriteRenderer.sprite = config.baseSkin;
         _animator.runtimeAnimatorController = config.animator;
     }
 }

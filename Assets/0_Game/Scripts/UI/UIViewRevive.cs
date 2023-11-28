@@ -22,7 +22,7 @@ public class UIViewRevive : UIView
 
     private void OnReviveButtonClick()
     {
-        GameplayController.Instance.RevivePlayer();
+        GameManager.Instance.RevivePlayer();
     }
 
     private void OnCloseButtonClick()

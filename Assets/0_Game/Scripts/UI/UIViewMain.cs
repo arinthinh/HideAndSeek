@@ -58,7 +58,7 @@ public class UIViewMain : UIView
     {
         Hide();
         AudioManager.PlaySound(Sound.Click);
-        GameplayController.Instance.StartRun();
+        GameManager.Instance.StartRun();
     }
     
     private void FixedUpdate()

@@ -16,6 +16,14 @@ MonoBehaviour:
   - id: 0
     mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
   - id: 1
-    mapPrefab: {fileID: 570777523041012607, guid: 7930493a9fee54a4a938dee8f4938f01, type: 3}
+    mapPrefab: {fileID: 570777523041012607, guid: 8846a81cfcb0c6b42a4e07c778959faa, type: 3}
   - id: 2
+    mapPrefab: {fileID: 570777523041012607, guid: 7930493a9fee54a4a938dee8f4938f01, type: 3}
+  - id: 3
     mapPrefab: {fileID: 570777523041012607, guid: 7a05e9c795d553343a396d05a1ac0aa6, type: 3}
+  - id: 4
+    mapPrefab: {fileID: 570777523041012607, guid: 164ef3dd1ac7fe946a42214caef59414, type: 3}
+  - id: 5
+    mapPrefab: {fileID: 570777523041012607, guid: 691416f9b06063f42ad6690723d8ed7b, type: 3}
+  - id: 6
+    mapPrefab: {fileID: 570777523041012607, guid: e7b1ac05fe0dc1449a3b44310afcd1de, type: 3}

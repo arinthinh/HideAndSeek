@@ -33,6 +33,6 @@ public class UIViewLose : UIView
     {
         Hide();
         AudioManager.PlaySound(Sound.Click);
-        GameplayController.Instance.Initialize();
+        GameManager.Instance.StartGameSession();
     }
 }

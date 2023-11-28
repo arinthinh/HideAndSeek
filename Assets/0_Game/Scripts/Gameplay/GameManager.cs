@@ -6,7 +6,7 @@ using DG.Tweening;
 using JSAM;
 using UnityEngine;
 
-public sealed class GameplayController : SingletonMono<GameplayController>
+public sealed class GameManager : SingletonMono<GameManager>
 {
     [SerializeField] private PlayerController _player;
     [SerializeField] private BossController _boss;
@@ -38,18 +38,21 @@ public sealed class GameplayController : SingletonMono<GameplayController>
     private void Start()
     {
         AudioManager.PlayMusic(Music.BGM);
-        Initialize();
+        DataManager.Instance.Init();
+        StartGameSession();
     }
 
-    public async void Initialize()
+    public async void StartGameSession()
     {
         await UniTask.Yield();
         
         _input.SetEnable(false);
+        _player.Init();
         _map.Clear();
         _player.Stop();
         _map.Stop();
         _map.SpawnCurrentLevel();
+        _map.Normalize();
         
         UIManager.Instance.HideAllViews();
         UIManager.Instance.GetView<UIViewMain>().Show();
@@ -152,6 +155,7 @@ public sealed class GameplayController : SingletonMono<GameplayController>
         {
             _input.SetEnable(true);
             _map.Normalize();
+            _map.Move();
             _player.Run();
         }));
     }

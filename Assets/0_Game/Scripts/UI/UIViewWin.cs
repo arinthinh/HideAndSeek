@@ -35,6 +35,6 @@ public class UIViewWin : UIView
     {
         AudioManager.PlaySound(Sound.Click);
         Hide();
-        GameplayController.Instance.Initialize();
+        GameManager.Instance.StartGameSession();
     }
 }
