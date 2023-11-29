@@ -18,6 +18,8 @@ public class UIViewGameplay : UIView
         _currentLevelTrans.transform
             .DOScale(Vector3.one * 1.2f, 0.5f)
             .SetLoops(-1, LoopType.Yoyo);
+        _currentLevelTMP.text = "Level " + DataManager.Instance.GameData.currentLevel;
+        _currentFruitTMP.text = DataManager.Instance.GameData.fruits.ToString();
     }
 
     public override void Show()

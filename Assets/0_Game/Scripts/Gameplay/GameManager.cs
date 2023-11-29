@@ -37,15 +37,25 @@ public sealed class GameManager : SingletonMono<GameManager>
 
     private void Start()
     {
-        AudioManager.PlayMusic(Music.BGM);
+        SetFps();
         DataManager.Instance.Init();
         UIManager.Instance.Initialize();
+        AudioManager.PlayMusic(Music.BGM);
         StartGameSession();
+    }
+
+    private async void SetFps()
+    {
+        QualitySettings.vSyncCount = 0;
+        await UniTask.Yield();
+        Application.targetFrameRate = 60;
     }
 
     public async void StartGameSession()
     {
         await UniTask.Yield();
+        
+        
         
         _input.SetEnable(false);
         _player.Init();

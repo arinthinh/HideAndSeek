@@ -2969,13 +2969,12 @@ MonoBehaviour:
     allCustomComponents:
       name: All
       components:
-      - displayName: GameplayController
-        name: GameplayController, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
+      - displayName: GameManager
+        name: GameManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
-          m_Text: GameplayController
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: GameplayController
+          m_Text: GameManager
+          m_Image: {fileID: 8872333681490167307, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: GameManager
         shown: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 6ed617ed712b85b4480400636227557a, type: 3}

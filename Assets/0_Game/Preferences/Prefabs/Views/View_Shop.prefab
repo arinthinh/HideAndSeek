@@ -114,8 +114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.945, y: -200}
-  m_SizeDelta: {x: 300.11, y: 258}
+  m_AnchoredPosition: {x: -200, y: -200}
+  m_SizeDelta: {x: 258, y: 258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8849496199991370650
 CanvasRenderer:
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skinId: 2
-  _skinPrice: 30
+  _skinPrice: 60
   _skinPricePanel: {fileID: 1890634930964365163}
   _selectedPanel: {fileID: 6786394759546650457}
 --- !u!1 &526965954037948880
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skinId: 1
-  _skinPrice: 20
+  _skinPrice: 40
   _skinPricePanel: {fileID: 3797629547427664920}
   _selectedPanel: {fileID: 1502673259309382659}
 --- !u!1 &1502673259309382659
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 40
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}
   m_sharedMaterial: {fileID: -1870507249441921784, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skinId: 3
-  _skinPrice: 40
+  _skinPrice: 100
   _skinPricePanel: {fileID: 8924847948176421886}
   _selectedPanel: {fileID: 7459256983970606082}
 --- !u!1 &3515970928650099346
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}
   m_sharedMaterial: {fileID: -1870507249441921784, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 40
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}
   m_sharedMaterial: {fileID: -1870507249441921784, guid: f266d3eb2eee56746973eef80c8c9fbc, type: 2}

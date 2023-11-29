@@ -12,31 +12,31 @@ public class PlayerController : SingletonMono<PlayerController>
         var currentSkin = DataManager.Instance.GameData.currentSkin;
         ChangeSkin(currentSkin);
     }
-    
+
     public void Run()
     {
-        _animator.Play("MaskDude_Run");
+        _animator.Play("Run");
     }
 
     public void Hide()
     {
-        _animator.Play("MaskDude_Idle");
+        _animator.Play("Idle");
     }
 
     public void Stop()
     {
-        _animator.Play("MaskDude_Idle");
+        _animator.Play("Idle");
     }
 
     public void Die()
     {
-        _animator.Play("MaskDude_Die");
+        _animator.Play("Die");
     }
 
     public void ChangeSkin(int id)
     {
         var config = ConfigManager.Instance.GetConfig<CharacterSkinConfigCollection>().GetSkin(id);
-          _spriteRenderer.sprite = config.baseSkin;
+        _spriteRenderer.sprite = config.baseSkin;
         _animator.runtimeAnimatorController = config.animator;
     }
 }

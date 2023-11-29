@@ -15,5 +15,17 @@ MonoBehaviour:
   configs:
   - id: 0
     animator: {fileID: 9100000, guid: 395592ec5b9f14543bdb06bc13ef8497, type: 2}
+    baseSkin: {fileID: 1218846689, guid: 2271e7fddf7bc9a4e82bbe689512a4e4, type: 3}
+    price: 0
+  - id: 1
+    animator: {fileID: 9100000, guid: 92845bedf7b86204ea6a22db96a12bad, type: 2}
+    baseSkin: {fileID: 0}
+    price: 0
+  - id: 2
+    animator: {fileID: 9100000, guid: f47ba765d68fa43448439201b1437772, type: 2}
+    baseSkin: {fileID: -1032541825, guid: 8bd6356463a430d45a34a8453ac8f7c2, type: 3}
+    price: 0
+  - id: 3
+    animator: {fileID: 9100000, guid: e9b352f0bab2c5242a213351f4bc8a0e, type: 2}
     baseSkin: {fileID: 0}
     price: 0
