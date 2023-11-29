@@ -26,11 +26,11 @@ MonoBehaviour:
   - id: 5
     mapPrefab: {fileID: 570777523041012607, guid: 691416f9b06063f42ad6690723d8ed7b, type: 3}
   - id: 6
-    mapPrefab: {fileID: 570777523041012607, guid: e7b1ac05fe0dc1449a3b44310afcd1de, type: 3}
+    mapPrefab: {fileID: 570777523041012607, guid: b08f479d10760834aab80932fda49a21, type: 3}
   - id: 7
     mapPrefab: {fileID: 570777523041012607, guid: f703db09aef29864f87d202ab2f65ca4, type: 3}
   - id: 8
-    mapPrefab: {fileID: 570777523041012607, guid: b08f479d10760834aab80932fda49a21, type: 3}
+    mapPrefab: {fileID: 570777523041012607, guid: e7b1ac05fe0dc1449a3b44310afcd1de, type: 3}
   - id: 9
     mapPrefab: {fileID: 570777523041012607, guid: 006728da5ac0c554cbb1bca8e1836296, type: 3}
   - id: 10
@@ -41,3 +41,7 @@ MonoBehaviour:
     mapPrefab: {fileID: 570777523041012607, guid: 43b5fd8bd3c05204aa397f644dceb516, type: 3}
   - id: 13
     mapPrefab: {fileID: 570777523041012607, guid: 67b18eb7b9dc1ea46aad05a026fc6ecc, type: 3}
+  - id: 14
+    mapPrefab: {fileID: 570777523041012607, guid: 183bdcabfa991b948a856fd8f0a9ed10, type: 3}
+  - id: 15
+    mapPrefab: {fileID: 570777523041012607, guid: fc7eac343fd521b46849954fcbd3bf9c, type: 3}

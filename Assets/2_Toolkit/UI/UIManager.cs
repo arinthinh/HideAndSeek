@@ -8,11 +8,6 @@ public class UIManager : SingletonMono<UIManager>
     [SerializeField] private List<UIView> _views;
     private readonly Dictionary<string, UIView> _viewsDic = new();
 
-    public void Start()
-    {
-        Initialize();
-    }
-
     public void Initialize()
     {
         foreach (var view in _views)

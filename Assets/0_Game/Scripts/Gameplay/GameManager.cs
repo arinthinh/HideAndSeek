@@ -39,6 +39,7 @@ public sealed class GameManager : SingletonMono<GameManager>
     {
         AudioManager.PlayMusic(Music.BGM);
         DataManager.Instance.Init();
+        UIManager.Instance.Initialize();
         StartGameSession();
     }
 
