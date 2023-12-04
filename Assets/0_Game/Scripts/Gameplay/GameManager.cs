@@ -34,7 +34,10 @@ public sealed class GameManager : SingletonMono<GameManager>
 
         BossController.onScanHitPlayer -= HandleLoseGame;
     }
-
+    
+    
+  
+    
     private void Start()
     {
         SetFps();
