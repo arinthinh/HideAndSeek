@@ -35,9 +35,6 @@ public sealed class GameManager : SingletonMono<GameManager>
         BossController.onScanHitPlayer -= HandleLoseGame;
     }
     
-    
-  
-    
     private void Start()
     {
         SetFps();
@@ -57,8 +54,6 @@ public sealed class GameManager : SingletonMono<GameManager>
     public async void StartGameSession()
     {
         await UniTask.Yield();
-        
-        
         
         _input.SetEnable(false);
         _player.Init();

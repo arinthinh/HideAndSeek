@@ -29,16 +29,16 @@ public class DataManager : SingletonMono<DataManager>
         var oldData = JsonUtility.FromJson<GameData>(dataString);
         _gameData = oldData;
     }
-
-    public void CreateNewData()
-    {
-        _gameData = new();
-    }
-
+    
     public void Save()
     {
         var dataString = JsonUtility.ToJson(_gameData);
         PlayerPrefs.SetString(DATA_KEY, dataString);
+    }
+    
+    public void CreateNewData()
+    {
+        _gameData = new();
     }
 
     // DATA HELPERS
